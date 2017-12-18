@@ -1,0 +1,32 @@
+{
+  "name": "akr",
+  "version": "0.0.2",
+  "description": "AKR site",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nagger/akr-php.git"
+  },
+  "author": "PIN",
+  "bugs": {
+    "url": "https://github.com/Nagger/akr-php/issues"
+  },
+  "homepage": "https://github.com/Nagger/akr-php#readme",
+  "devDependencies": {
+    "autoprefixer": "^7.2.3",
+    "browser-sync": "^2.18.13",
+    "css-mqpacker": "^6.0.1",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-connect-php": "^1.0.1",
+    "gulp-csso": "^3.0.0",
+    "gulp-imagemin": "^4.0.0",
+    "gulp-less": "^3.3.2",
+    "gulp-plumber": "^1.1.0",
+    "gulp-postcss": "^7.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-svgmin": "^1.2.4",
+    "gulp-svgstore": "^6.1.0",
+    "run-sequence": "^2.2.0"
+  }
+}
