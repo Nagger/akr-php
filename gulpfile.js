@@ -1,6 +1,7 @@
 "use strict";
 
 var gulp = require("gulp");
+var php = require("gulp-connect-php");
 var less = require("gulp-less");
 var plumber = require("gulp-plumber");
 var postcss = require("gulp-postcss");
@@ -13,6 +14,10 @@ var mqpacker = require("css-mqpacker");
 var svgstore = require("gulp-svgstore");
 var imagemin = require("gulp-imagemin");
 var run = require("run-sequence");
+
+gulp.task("clean", function() {
+   return del("build");
+});
 
 gulp.task("style",function() {
   gulp.src("less/style.less")
@@ -30,6 +35,23 @@ gulp.task("style",function() {
    .pipe(rename("style.min.css"))
    .pipe(gulp.dest("build/css"));
 });
-gulp.task("clean", function() {
-   return del("build");
+
+gulp.task("copy", function() {
+    return gulp.src([
+      "fonts/**/*.{woff,woff2}",
+      "img/**",
+      "js/**",
+       "*.{html,php}"
+     ], {
+      base: "."
+     })
+     .pipe(gulp.dest("build"));
+});
+
+gulp.task("php", function() {
+ php.server({
+    base: "build", 
+    port: 8010, 
+    keepalive: true
+ });
 });
